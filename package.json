@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bogdanAndrushchenko/goit-js-hw-11-timer.git"
+    "url": "git+https://github.com/VadimBrikulya/goit-js-hw-11-timer.git"
   },
   "keywords": [],
-  "author": "Bogdan Andrushchenko <bandrushchenko15@gmail.com>",
+  "author": "Vadym Brikulya <im.master99@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bogdanAndrushchenko/goit-js-hw-11-timer.git/issues"
+    "url": "https://github.com/VadimBrikulya/goit-js-hw-11-timer.git/issues"
   },
-  "homepage": "https://bogdanAndrushchenko.github.io/goit-js-hw-11-timer",
+  "homepage": "https://github.com/VadimBrikulya/goit-js-hw-11-timer",
   "devDependencies": {
     "@babel/core": "^7.8.7",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
