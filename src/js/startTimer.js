@@ -1,6 +1,4 @@
- import
- CountdownTimer
- from "./myTimer";
+ import CountdownTimer from "./myTimer";
 
  const timer = new CountdownTimer({
    selector: "#timer-1",
