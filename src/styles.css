@@ -33,7 +33,7 @@ body {
 .timer,
 .btn-box {
   font-family: sans-serif;
-  color: #fff;
+  color: rgb(0, 15, 20);
   display: flex;
   justify-content: center;
   margin-top: 20px;
@@ -42,17 +42,8 @@ body {
   font-size: 30px;
 }
 
-.field {
-  padding: 10px;
-  margin: 5px;
-  border-radius: 3px;
-  background: #2c6468;
-}
-
 .value {
   padding: 15px;
-  border-radius: 3px;
-  background: #78c7d4;
   display: inline-block;
 }
 

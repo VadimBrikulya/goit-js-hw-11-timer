@@ -2,7 +2,7 @@
 
  const timer = new CountdownTimer({
    selector: "#timer-1",
-   targetDate: "2021.05.19",
+   targetDate: "2021.05.23",
  });
 
  const startBtn = document.querySelector("button[data-action-start]");
@@ -12,3 +12,4 @@
    startBtn.setAttribute('disabled', '')
    timer.showTime();
  }
+
