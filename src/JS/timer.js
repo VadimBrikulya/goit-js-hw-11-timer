@@ -2,6 +2,7 @@ class CountdownTimer {
     constructor({ selector, targetDate }) {
         this.selector = selector;
         this.targetDate = targetDate;
+
         this.refs = {
             days: document.querySelector('[data-value="days"]'),
             hours: document.querySelector('[data-value="hours"]'),
@@ -14,7 +15,9 @@ class CountdownTimer {
 
     start() {
         this.targetDate = new Date(`${selectedMonth} ${selectedDay}, ${selectedYear}`)
-        if (this.isActive) { return; }
+        if (this.isActive) {
+            return;
+        }
         this.isActive = true;
         this.intervalId = setInterval(() => {
             const currentTime = Date.now();
@@ -50,15 +53,6 @@ class CountdownTimer {
  };
     
 }
-
-
-
-
-
-
-
-
-
 
 const year = document.querySelector('#year');
 const month = document.querySelector('#month');
