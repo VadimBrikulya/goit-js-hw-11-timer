@@ -1,2 +1,2 @@
-import './js/startTimer';
 import './styles.css';
+import './JS/timer'
