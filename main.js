@@ -1,31 +1,44 @@
- const refs = {
+
+
+const refs = {
             startBtn: document.querySelector('#btnStart'),
             stopBtn: document.querySelector('#btnStop'),
             timer: document.querySelector('#timer-1')            
         };
 
-
-const timer = {
-    intervalId: null,
-    isActive: false,
+class Timer {
+    constructor({onTick}) {
+        this.intervalId = null;
+        this.isActive = false;
+        this.onTick = onTick;
+    }
     start() {
         if (this.isActive) {
             return;
         }
-
         const startTime = Date.now();
         this.isActive = true;
 
         this.intervalId = setInterval(() => {
             const currenTime = Date.now();
-            console.log(currenTime - startTime);
+            const deltaTime = currenTime - startTime;
+            const time = getTimeComponents(deltaTime);
+
+            this.onTick(time)
+            // updateTimer(time);
+
         }, 1000);
-    },
+    }
     stop() {
         clearInterval(this.intervalId);
         this.isActive = false;
-    },
-};
+    }
+}
+
+
+const timer = new Timer({
+    onTick: updateTimer
+});
 
 
 refs.startBtn.addEventListener('click', () => {
@@ -38,7 +51,7 @@ refs.stopBtn.addEventListener('click', () => {
 
 
    function updateTimer({ days, hours, mins, secs }) {
-       refs.timer.textContent = `${days}, ${hours}, ${mins}, ${secs}`;
+       refs.timer.textContent = `${days}:${hours}:${mins}:${secs}`;
         
     }
     
@@ -48,9 +61,12 @@ refs.stopBtn.addEventListener('click', () => {
 };
 
  function getTimeComponents(time) {
-    const days = pad(Math.floor(time / (1000 * 60 * 60 * 24)));
+     const days = pad(
+         Math.floor(time / (1000 * 60 * 60 * 24))
+     );
     const hours = pad(Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
     const mins = pad(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60)));
-    const secs = pad(Math.floor((time % (1000 * 60)) / 1000));
+     const secs = pad(Math.floor((time % (1000 * 60)) / 1000));
+     
     return {days, hours, mins, secs};
     };
