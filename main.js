@@ -11,7 +11,14 @@ class Timer {
         this.intervalId = null;
         this.isActive = false;
         this.onTick = onTick;
+        this.init();
     }
+    init() {
+    const time = this.getTimeComponents(0);
+    this.onTick(time);
+
+    };
+
     start() {
         if (this.isActive) {
             return;
@@ -25,13 +32,13 @@ class Timer {
             const time = this.getTimeComponents(deltaTime);
 
             this.onTick(time)
-            // updateTimer(time);
-
         }, 1000);
     }
     stop() {
         clearInterval(this.intervalId);
         this.isActive = false;
+        const time = this.getTimeComponents(0);
+        this.onTick(time);
     }
      getTimeComponents(time) {
      const days = this.pad(
@@ -50,7 +57,7 @@ class Timer {
 
 
 const timer = new Timer({
-    onTick: updateTimer
+    onTick: updateTimer,
 });
 
 
