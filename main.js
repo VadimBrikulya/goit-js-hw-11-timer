@@ -41,9 +41,7 @@ class Timer {
         this.onTick(time);
     }
      getTimeComponents(time) {
-     const days = this.pad(
-         Math.floor(time / (1000 * 60 * 60 * 24))
-     );
+     const days = this.pad(Math.floor(time / (1000 * 60 * 60 * 24)));
     const hours = this.pad(Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
     const mins = this.pad(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60)));
      const secs = this.pad(Math.floor((time % (1000 * 60)) / 1000));
@@ -71,3 +69,7 @@ refs.stopBtn.addEventListener('click', timer.stop.bind(timer));
     }
 
 
+new CountdownTimer({
+  selector: '#timer-1',
+  targetDate: new Date('Jul 17, 2019'),
+});

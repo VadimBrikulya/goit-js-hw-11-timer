@@ -16,6 +16,10 @@ body {
   /* background-image: url(https://img4.goodfon.ru/wallpaper/nbig/7/3e/vecher-firewatch-campo-santo-vid-les-igra-peizazh-gory-pozha.jpg); */
   background-repeat: no-repeat;
   background-size: cover;
+  text-align: center;
+  background: #e5fff9;
+  font-family: sans-serif;
+  font-weight: 100;
 }
 
 /* .timer {
