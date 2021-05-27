@@ -61,13 +61,8 @@ const timer = new Timer({
 });
 
 
-refs.startBtn.addEventListener('click', () => {
-    timer.start();
-});
-
-refs.stopBtn.addEventListener('click', () => {
-    timer.stop();
-});
+refs.startBtn.addEventListener('click', timer.start.bind(timer));
+refs.stopBtn.addEventListener('click', timer.stop.bind(timer));
 
 
    function updateTimer({ days, hours, mins, secs }) {
