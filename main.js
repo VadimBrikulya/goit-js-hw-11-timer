@@ -20,9 +20,9 @@ class Timer {
         this.isActive = true;
 
         this.intervalId = setInterval(() => {
-            const currenTime = Date.now();
-            const deltaTime = currenTime - startTime;
-            const time = getTimeComponents(deltaTime);
+            const currentTime = Date.now();
+            const deltaTime = currentTime - startTime;
+            const time = this.getTimeComponents(deltaTime);
 
             this.onTick(time)
             // updateTimer(time);
@@ -33,6 +33,19 @@ class Timer {
         clearInterval(this.intervalId);
         this.isActive = false;
     }
+     getTimeComponents(time) {
+     const days = this.pad(
+         Math.floor(time / (1000 * 60 * 60 * 24))
+     );
+    const hours = this.pad(Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+    const mins = this.pad(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60)));
+     const secs = this.pad(Math.floor((time % (1000 * 60)) / 1000));
+     
+    return {days, hours, mins, secs};
+};
+  pad(value) {
+    return String(value).padStart(2, '0');
+};
 }
 
 
@@ -54,19 +67,5 @@ refs.stopBtn.addEventListener('click', () => {
        refs.timer.textContent = `${days}:${hours}:${mins}:${secs}`;
         
     }
-    
 
-  function pad(value) {
-    return String(value).padStart(2, '0');
-};
 
- function getTimeComponents(time) {
-     const days = pad(
-         Math.floor(time / (1000 * 60 * 60 * 24))
-     );
-    const hours = pad(Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
-    const mins = pad(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60)));
-     const secs = pad(Math.floor((time % (1000 * 60)) / 1000));
-     
-    return {days, hours, mins, secs};
-    };

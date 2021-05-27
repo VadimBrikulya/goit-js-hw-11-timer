@@ -18,7 +18,7 @@ body {
   background-size: cover;
 }
 
-.timer {
+/* .timer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,7 +45,7 @@ body {
 
 .value {
   margin-right: 3px;
-}
+} */
 button {
   margin-right: 3px;
 }
