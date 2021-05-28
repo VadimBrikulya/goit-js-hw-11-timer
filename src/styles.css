@@ -9,51 +9,15 @@ html {
 }
 
 body {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
   /* background-image: url(https://img4.goodfon.ru/wallpaper/nbig/7/3e/vecher-firewatch-campo-santo-vid-les-igra-peizazh-gory-pozha.jpg); */
-  background-repeat: no-repeat;
-  background-size: cover;
-  text-align: center;
-  background: #e5fff9;
-  font-family: sans-serif;
-  font-weight: 100;
-}
-
-/* .timer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.selector {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.field {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 100px;
-  min-height: 50px;
-  background-color: rgba(200, 200, 255, 0.3);
-  border: rgba(255, 255, 255, 0.2) solid 2px;
-  border-radius: 4px;
-  margin-bottom: 10px;
-  margin-right: 10px;
-}
-
-.value {
-  margin-right: 3px;
-} */
-button {
-  margin-right: 3px;
-}
-
-select {
-  margin-right: 5px;
+ */
 }
